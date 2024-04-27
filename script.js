@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Simulated data - replace with actual API call
         const searchResultsData = [
-            { name: 'John Smith', university: 'University of Example' },
-            { name: 'Jane Doe', university: 'Another University' },
+            { company: 'John Smith', rating: 'University of Example' },
+            { company: 'Jane Doe', rating: 'Another University' },
             // Add more simulated data as needed
         ];
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display search results
         if (searchTerm !== '') {
             const filteredResults = searchResultsData.filter(function(result) {
-                return result.name.toLowerCase().includes(searchTerm.toLowerCase());
+                return result.company.toLowerCase().includes(searchTerm.toLowerCase());
             });
 
             if (filteredResults.length > 0) {
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const companyCard = document.createElement('div');
                     companyCard.classList.add('company-card');
                     companyCard.innerHTML = `
-                        <h3>${result.name}</h3>
-                        <p>${result.university}</p>
+                        <h3>${result.company}</h3>
+                        <p>${result.rating}</p>
                     `;
                     searchResults.appendChild(companyCard);
                 });
