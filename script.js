@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (filteredResults.length > 0) {
                 filteredResults.forEach(function(result) {
-                    const professorCard = document.createElement('div');
-                    professorCard.classList.add('professor-card');
-                    professorCard.innerHTML = `
+                    const companyCard = document.createElement('div');
+                    companyCard.classList.add('company-card');
+                    companyCard.innerHTML = `
                         <h3>${result.name}</h3>
                         <p>${result.university}</p>
                     `;
-                    searchResults.appendChild(professorCard);
+                    searchResults.appendChild(companyCard);
                 });
             } else {
                 searchResults.innerHTML = '<p>No results found.</p>';
