@@ -15,7 +15,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: #007bff;
+    background-color: #0b8038;
     color: #fff;
     padding: 20px;
 }
@@ -68,33 +68,33 @@ h2 {
     /* Styles for search results will be added dynamically */
 }
 
-/* Professor listings styles */
-.professor-list {
+/* Company listings styles */
+.company-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.professor-card {
+.company-card {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
 }
 
-.professor-card h3 {
+.company-card h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-.professor-card p {
+.company-card p {
     font-size: 1em;
     color: #666;
 }
 
 /* Footer styles */
 footer {
-    background-color: #007bff;
+    background-color: #0b8038;
     color: #fff;
     text-align: center;
     padding: 10px;
