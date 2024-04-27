@@ -54,6 +54,11 @@ h2 {
 }
 
 /* Search section styles */
+#search {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #search-form {
     margin-bottom: 20px;
     text-align: center;
