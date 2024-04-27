@@ -18,7 +18,8 @@ header {
     background-color: #0b8038;
     color: #fff;
     padding: 20px;
-    
+    text-align: center;
+
 }
 
 header h1 {
@@ -56,6 +57,7 @@ h2 {
 /* Search section styles */
 #search-form {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #search-input {
@@ -77,7 +79,7 @@ h2 {
 }
 
 .company-card {
-    background-color: #fff;
+    background-color: #b82c2c;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
@@ -86,11 +88,13 @@ h2 {
 .company-card h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .company-card p {
     font-size: 1em;
     color: #666;
+    text-align: center;
 }
 
 /* Footer styles */
