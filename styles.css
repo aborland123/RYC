@@ -61,7 +61,7 @@ h2 {
 
 #search-form {
     width: 50px;
-    text-align: center;
+    justify-content: center;
 }
 
 #search-input {
