@@ -62,12 +62,12 @@ h2 {
 
 #search-form {
     margin-bottom: 20px;
+    width: 50px;
 }
 
 #search-input {
-    padding: 50px;
-    width: 100px;
-    height: 50px;
+    padding: 20px;
+    width: 50px;
     border: 2px solid #ccc;
     border-radius: 50px;
 }
