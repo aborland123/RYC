@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for search form submission
     searchForm.addEventListener('submit', function(event) {
-        //event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent form submission
 
         const searchTerm = searchInput.value.trim();
 
