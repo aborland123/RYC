@@ -72,6 +72,8 @@ h2 {
 
 #search-results {
     /* Styles for search results will be added dynamically */
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 /* Company listings styles */
