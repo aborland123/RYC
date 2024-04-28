@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
+    const searchInput = document.getElementById('main-search-input'); // Corrected ID
     const searchResults = document.getElementById('search-results');
 
     // Event listener for search form submission
