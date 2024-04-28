@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Simulated data - replace with actual API call
         const searchResultsData = [
-            { company: 'John Smith', rating: 'University of Example' },
-            { company: 'Jane Doe', rating: 'Another University' },
+            { company: 'Bank of America', rating: '4/5' },
+            { company: 'Ford', rating: '2.8/5' },
+            { company: 'WereAdulting', rating: '2.8/5' }
             // Add more simulated data as needed
         ];
 
