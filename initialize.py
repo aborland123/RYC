@@ -1,6 +1,7 @@
 import requests
-from your_application import db  # Import the database instance from your Flask application
-from your_application.models import Company  # Import the Company model from your application
+from app import db  # Import the database instance from app.py
+from models.company import Company  # Import the Company model from models/company.py
+
 
 def fetch_and_add_company_names():
     # Make a GET request to the external API to retrieve company names
