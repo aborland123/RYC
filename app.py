@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
+from models.company import Company
+from models.review import Review
 
 
 app = Flask(__name__)
@@ -32,40 +34,11 @@ class Review(db.Model):
 def index():
     return 'Welcome to Company Rating App!'
 
-@app.route('/api/companies', methods=['GET'])
-def get_company_names():
-    # Make a GET request to the external API to retrieve company names
-    api_url = 'https://api.thecompaniesapi.com/v1/companies'
-    response = requests.get(api_url)
 
-    if response.status_code == 200:
-        # Parse the JSON response to extract company names
-        company_data = response.json()
-        company_names = [company['name'] for company in company_data]
-
-        # Return the company names as JSON response
-        return jsonify(company_names)
-    else:
-        # Return an error response if the API request fails
-        return jsonify({'error': 'Failed to fetch company names from the API'}), response.status_code
-
-@app.route('/companies/<int:company_id>')
-def company_details(company_id):
-    return f'Details of Company with ID {company_id}'
-
-@app.route('/companies/<int:company_id>/reviews')
-def company_reviews(company_id):
-    return f'Reviews of Company with ID {company_id}'
-
-from flask import jsonify
 
 @app.route('/companies/<int:company_id>', methods=['GET'])
 def get_company(company_id):
-    # Logic to retrieve company details from the database based on the company_id
-    # Replace this with actual logic to query the database
-
-    # For demonstration purposes, let's assume we have a Company model defined
-    # and we're using SQLAlchemy to query the database
+    # Query the database for the company with the specified ID
     company = Company.query.get(company_id)
 
     if company is None:
@@ -73,10 +46,32 @@ def get_company(company_id):
 
     # Serialize the company object to JSON and return it
     return jsonify({
-        'id': company.id,
         'name': company.name,
-        'description': company.description
     })
+
+@app.route('/companies/<int:company_id>/reviews')
+def company_reviews(company_id):
+    # Query the database for reviews of the company with the specified ID
+    reviews = Review.query.filter_by(company_id=company_id).all()
+
+    if not reviews:
+        return jsonify({'error': 'Reviews not found'}), 404
+
+    # Serialize the review objects to JSON and return them
+    serialized_reviews = []
+    for review in reviews:
+        serialized_reviews.append({
+            'id': review.id,
+            'compensation_rating': review.compensation_rating,
+            'diversity_rating': review.diversity_rating,
+            'team_rating': review.team_rating,
+            'management_rating': review.management_rating,
+            'work_life_balance_rating': review.work_life_balance_rating,
+            'growth_rating': review.growth_rating,
+            'written_review': review.written_review
+        })
+
+    return jsonify(serialized_reviews)
 
 
 if __name__ == '__main__':
