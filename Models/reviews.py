@@ -10,3 +10,4 @@ class Review(db.Model):
     management_rating = db.Column(db.Integer)
     work_life_balance_rating = db.Column(db.Integer)
     growth_rating = db.Column(db.Integer)
+    feedback_review = db.Column(db.Text)

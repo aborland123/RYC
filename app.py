@@ -69,6 +69,7 @@ def company_reviews(company_id):
             'work_life_balance_rating': review.work_life_balance_rating,
             'growth_rating': review.growth_rating,
             'written_review': review.written_review
+            'feedback_review': review.feedback_review
         })
 
     return jsonify(serialized_reviews)
